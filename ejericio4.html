@@ -1,0 +1,34 @@
+<!-- Utilizando la sentencia if detener el conteo regresivo cuando el valor
+ llegue a cero y cambiar el texto de bomba por "BOOM!" y el background-color
+  de body a rojo. -->
+
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body id="body">
+    <h1 id="bomba"> ¡¡¡ La bomba !!! </h1>
+
+    <h2 id="timer">15</h2>
+    <script>
+        var timer_tag = document.getElementById('timer');
+        var timer = timer_tag.innerHTML;
+        timer = parseInt(timer);
+         var intervalo = setInterval(function(){
+          timer = timer - 1
+          timer_tag.innerHTML = timer
+          myStopFunction();
+        }, 1000);
+        function myStopFunction() {
+          if (timer === 0){
+          document.getElementById('bomba').innerHTML = "BOOM!";
+          document.body.style.backgroundColor= "red";
+              clearInterval(intervalo);
+          }
+
+        }
+    </script>
+  </body>
+</html>
