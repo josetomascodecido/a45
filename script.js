@@ -9,7 +9,32 @@
 
 
 var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
+var line = document.createElement("li")
 var sortList =  function(){
+  for (var i = 0; i < arr.length; ++i) {
+    if (arr[i]%2 == 0) {
+      var pares = document.getElementById('par')
+      var line = document.createElement("li")
+      var node = document.createTextNode(arr[i])
+      line.appendChild(node)
+      pares.appendChild(line)
+    }
+    else if (typeof(arr[i]) === "string" ) {
 
-  console.log(typeof arr[0]);
+      var pares = document.getElementById('string')
+      var line = document.createElement("li")
+      var node = document.createTextNode(arr[i])
+      line.appendChild(node)
+      pares.appendChild(line)
+
+    }
+    else{
+
+      var pares = document.getElementById('impar')
+      var line = document.createElement("li")
+      var node = document.createTextNode(arr[i])
+      line.appendChild(node)
+      pares.appendChild(line)
+      }
+    }
 }
